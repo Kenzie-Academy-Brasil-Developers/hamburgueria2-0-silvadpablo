@@ -1,4 +1,5 @@
 import { Route, Routes } from "react-router-dom";
+import { CartProvider } from "../Contexts/CartContext";
 import { DialogProvider } from "../Contexts/DialogContext";
 import { HomePage } from "../pages/HomePage/HomePage";
 import { LoginPage } from "../pages/LoginPage/LoginPage";
@@ -12,9 +13,11 @@ export function MainRoutes() {
       <Route
         path="/home"
         element={
-          <DialogProvider>
-            <HomePage />
-          </DialogProvider>
+          <CartProvider>
+            <DialogProvider>
+              <HomePage />
+            </DialogProvider>
+          </CartProvider>
         }
       />
     </Routes>

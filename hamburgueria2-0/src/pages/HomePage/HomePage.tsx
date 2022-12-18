@@ -56,7 +56,7 @@ export function HomePage() {
         <ul className="flex wrap">
           {
             products.map((product) =>
-              <Cards category={product.category} img={product.img} price={product.price} name={product.name} />
+              <Cards key={product.id} id={product.id} category={product.category} img={product.img} price={product.price} name={product.name} />
             )
           }
         </ul>

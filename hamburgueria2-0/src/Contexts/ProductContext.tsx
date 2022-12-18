@@ -21,7 +21,7 @@ interface iProductContext {
     }[]>>
 }
 
-interface iProduct {
+export interface iProduct {
     id: number,
     name: string,
     category: string,

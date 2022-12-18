@@ -12,10 +12,15 @@ export const CartItemStyles = styled.div`
             border-radius: var(--card-radius);
         }
 
+        .count {
+            margin: 0 auto;
+        }
+
         h2 {
             font-size: var(--heading3);
             color: var(--grey6);
             font-weight: var(--bold);
+            text-align: center;
         }
 
         p {

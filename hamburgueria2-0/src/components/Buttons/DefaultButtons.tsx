@@ -7,6 +7,7 @@ interface iButtonProps {
     handleSubmit?: any,
     handleLogin?: any,
     onClick?: any,
+    addCartItem?: any
 }
 
 export function LoginButton ( { handleSubmit, handleLogin, type, text }: iButtonProps) {
@@ -21,9 +22,9 @@ export function RegisterButton ( { handleCreateUser, handleSubmit, type, text }:
     )
 }
 
-export function AddProductButton () {
+export function AddProductButton ( { addCartItem, text }: iButtonProps ) {
     return(
-        <MediumGreyButtons>Adicionar</MediumGreyButtons>
+        <MediumGreyButtons onClick={addCartItem}>{text}</MediumGreyButtons>
     )
 }
 

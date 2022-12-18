@@ -42,6 +42,8 @@ export const CardStyle = styled.li`
 
     :hover {
         border-color: var(--primary);
+        scale: 105%;
+        transition: ease-in-out 300ms;
 
         button {
             background-color: var(--primary);
