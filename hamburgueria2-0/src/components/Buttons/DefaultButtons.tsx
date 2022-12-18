@@ -3,29 +3,22 @@ import { DefaultGreenButtons, DefaultGreyButtons, MediumGreyButtons } from "./St
 
 interface iButtonProps {
     text: string,
+    type?: "submit" | "button",
+    handleCreateUser?: any,
+    handleSubmit?: any,
+    handleLogin?: any,
+    onClick?: any,
 }
 
-export function LoginButton ( { text }: iButtonProps) {
-    const Navigate = useNavigate()
-
-    async function HandleLogin() {
-        Navigate("/home")
-    }
-    
+export function LoginButton ( { handleSubmit, handleLogin, type, text }: iButtonProps) {
     return (
-        <DefaultGreenButtons onClick={HandleLogin}>{text}</DefaultGreenButtons>
+        <DefaultGreenButtons onClick={handleSubmit(handleLogin)} type={type}>{text}</DefaultGreenButtons>
     )
 }
 
-export function RegisterButton ( { text }: iButtonProps) {
-    const Navigate = useNavigate()
-
-    async function HandleRegister() {
-        Navigate("/")
-    }
-
+export function RegisterButton ( { handleCreateUser, handleSubmit, type, text }: iButtonProps) {
     return (
-        <DefaultGreyButtons onClick={HandleRegister}>{text}</DefaultGreyButtons>
+        <DefaultGreyButtons type={type} onClick={handleSubmit(handleCreateUser)}>{text}</DefaultGreyButtons>
     )
 }
 

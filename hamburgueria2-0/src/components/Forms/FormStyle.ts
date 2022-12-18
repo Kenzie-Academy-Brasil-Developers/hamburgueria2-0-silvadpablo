@@ -1,10 +1,21 @@
 import styled from "styled-components";
 
-export const FormStyle = styled.div`
+interface iFormProp {
+    noValidate: boolean
+}
+
+export const FormStyle = styled.div<iFormProp>`
     border: 2px solid var(--grey0);
     box-shadow: 0px 0px 30px -20px rgba(0, 0, 0, 0.25);
     padding: 25px;
     gap: 25px;
+
+    span {
+        color: var(--negative);
+        font-size: var(--caption);
+        font-weight: var(--medium);
+        text-align: right;
+    }
 
     h1 {
         font-size: var(--heading3);

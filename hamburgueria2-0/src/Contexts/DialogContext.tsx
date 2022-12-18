@@ -11,11 +11,11 @@ interface iDialogContext {
 
 export const DialogContext = createContext({} as iDialogContext)
 
-export const DialogProvider = ( { children }: iDialogContextProps) => {
+export function DialogProvider ( { children }: iDialogContextProps) {
     const [openDialog, setOpenDialog] = useState(false)
 
     return (
-        <DialogContext.Provider value={{ openDialog, setOpenDialog}}>
+        <DialogContext.Provider value={{ openDialog, setOpenDialog }}>
             {children}
         </DialogContext.Provider>
     )
