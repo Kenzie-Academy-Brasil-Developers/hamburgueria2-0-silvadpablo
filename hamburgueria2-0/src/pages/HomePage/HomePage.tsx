@@ -8,14 +8,24 @@ import { Cards } from "../../components/Cards/Cards";
 import { useContext } from "react";
 import { ShoppingCart } from "../../components/ShoppingCart/Dialog";
 import { DialogContext } from "../../Contexts/DialogContext";
+import { ProductContext } from "../../Contexts/ProductContext";
+import { AuthContext } from "../../Contexts/AuthContext";
 
 export function HomePage() {
   const Navigate = useNavigate();
   const { openDialog, setOpenDialog } = useContext(DialogContext);
+  const { token } = useContext(AuthContext)
+  const { products } = useContext(ProductContext)
+
+  // if (token === undefined || token === "") {
+  //   Navigate("/");
+  // }
 
   function HandleLogout() {
+    localStorage.clear()
     Navigate("/");
   }
+
   return (
     <HomePageStyle>
       <ShoppingCart open={openDialog} setOpenDialog={setOpenDialog} />
@@ -44,7 +54,11 @@ export function HomePage() {
       </header>
       <main>
         <ul className="flex wrap">
-          <Cards />
+          {
+            products.map((product) =>
+              <Cards category={product.category} img={product.img} price={product.price} name={product.name} />
+            )
+          }
         </ul>
       </main>
     </HomePageStyle>

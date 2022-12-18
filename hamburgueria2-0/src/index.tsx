@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import App from './App';
 import { AuthProvider } from './Contexts/AuthContext';
+import { ProductProvider } from './Contexts/ProductContext';
 import { UserProvider } from './Contexts/UserContext';
 import reportWebVitals from './reportWebVitals';
 import GlobalStyles from './styles/GlobalStyles';
@@ -14,11 +15,13 @@ root.render(
   <React.StrictMode>
     <GlobalStyles/>
     <BrowserRouter>
-      <AuthProvider>
-        <UserProvider>
-          <App />
-        </UserProvider>
-      </AuthProvider>
+      <ProductProvider>
+        <AuthProvider>
+          <UserProvider>
+              <App />
+          </UserProvider>
+        </AuthProvider>
+      </ProductProvider>
     </BrowserRouter>
   </React.StrictMode>
 );

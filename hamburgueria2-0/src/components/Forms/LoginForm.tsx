@@ -5,7 +5,6 @@ import { Link } from "react-router-dom"
 import { useForm } from "react-hook-form";
 import { useContext } from "react";
 import { AuthContext } from "../../Contexts/AuthContext";
-import { api } from "../../services/api";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { LoginSchema } from "../Schemas/LoginSchema";
 
