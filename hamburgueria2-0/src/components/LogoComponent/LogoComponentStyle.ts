@@ -32,4 +32,10 @@ export const LogoDivStyle = styled.div`
     .dots {
         width: 40%;
     }
+
+    @media (max-width: 600px){
+        .dots{
+            display: none;
+        }
+    }
 `

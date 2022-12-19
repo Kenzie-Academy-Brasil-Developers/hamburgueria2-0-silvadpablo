@@ -1,5 +1,4 @@
 import { useContext } from "react";
-import { isTemplateExpression } from "typescript";
 import { CartContext } from "../../Contexts/CartContext";
 import { ProductContext } from "../../Contexts/ProductContext";
 import { AddProductButton } from "../Buttons/DefaultButtons";

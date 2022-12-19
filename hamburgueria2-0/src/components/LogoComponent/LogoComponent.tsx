@@ -6,7 +6,7 @@ import { LogoDivStyle } from "./LogoComponentStyle"
 
 export function LogoDiv () {
     return (
-        <LogoDivStyle className="flex flex-col">
+        <LogoDivStyle className="logo-component flex flex-col">
             <img className="logo" src={Logo} alt="logo" />
             <div className="flex headline-box items-center">
                 <div className="bag-icon">
